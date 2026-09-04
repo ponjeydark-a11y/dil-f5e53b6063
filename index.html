@@ -38,6 +38,8 @@ tr:hover{background:#f8f9fa;}
 .data-wrap table{font-size:13px;} .data-wrap td,.data-wrap th{padding:9px 7px;white-space:nowrap;}
 .replay-col{background:#fff4e6;}
 th.replay-col{background:#ffd8a8;color:#d9480f;}
+.newsubj-col{background:#e7f5ff;}
+th.newsubj-col{background:#a5d8ff;color:#1864ab;}
 .two-col-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
 .aligned-table{table-layout:fixed;}
 .aligned-table th{white-space:normal;}
@@ -82,6 +84,7 @@ th.replay-col{background:#ffd8a8;color:#d9480f;}
   </div>
   <div class="tabs">
     <button class="tab active" id="tb-dash" onclick="showTab('dash')">📊 대시보드</button>
+    <button class="tab" id="tb-s3" onclick="showTab('s3')">📋 시즌3(일자별 데이터)</button>
     <button class="tab" id="tb-s2" onclick="showTab('s2')">📋 시즌2(일자별 데이터)</button>
     <button class="tab" id="tb-s1" onclick="showTab('s1')">📋 시즌1(일자별 데이터)</button>
   </div>
@@ -154,6 +157,19 @@ th.replay-col{background:#ffd8a8;color:#d9480f;}
   <p style="font-size:11px;color:#868e96;">※ 25년 강사별 수치는 과목/강사 매칭 참고값(영어: 26년 최은정 / 25년 김대순). 상단 '전년 시즌2 동일일차 대비 인원'은 강사별 합계(③) 기준입니다. ②③은 시즌2의 오픈 경과 일차(day-index)로 전년과 매칭하며, 시즌1은 별도로 ①에서 목표 대비 진척도로 표시합니다. ④ 다시보기는 26년 신설 상품으로 전년 비교 데이터가 없습니다.</p>
   </div>
 
+  <div id="s3" class="tab-content">
+  <div class="section-title">📋 시즌3 일자별 모집 현황 (구매인원 누적)</div>
+  <div class="data-wrap">
+  <table><thead>
+    <tr><th rowspan="2">일자</th><th colspan="8">정규 모집</th><th colspan="4" class="newsubj-col">신규 4과목</th><th colspan="7" class="replay-col">다시보기 (시즌2 컨텐츠)</th><th rowspan="2">합계</th><th rowspan="2">전일대비</th><th rowspan="2">0원</th></tr>
+    <tr><th>이정수</th><th>이정수(VOD)</th><th>이창훈</th><th>권현석</th><th>신민우</th><th>최은정</th><th>홍재영</th><th>이가흠</th><th class="newsubj-col">물2</th><th class="newsubj-col">화2</th><th class="newsubj-col">생2</th><th class="newsubj-col">지2</th><th class="replay-col">이정수</th><th class="replay-col">이창훈</th><th class="replay-col">권현석</th><th class="replay-col">신민우</th><th class="replay-col">최은정</th><th class="replay-col">홍재영</th><th class="replay-col">이가흠</th></tr>
+  </thead><tbody>
+      <tr><td><b>09/07<span>(월)</span></b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="newsubj-col">0</td><td class="newsubj-col">0</td><td class="newsubj-col">0</td><td class="newsubj-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td><b>0</b></td><td>0</td><td>0원</td></tr>
+  </tbody></table>
+  </div>
+  <p style="font-size:11px;color:#868e96;">※ 시즌3은 2026-09-07 17시부터 모집 시작 예정입니다(현재 표시된 9/7 행은 개강 전 0으로 초기화된 값). 신규 4과목(물2/화2/생2/지2, 연한 파란 배경)이 이번 시즌부터 추가되었고, 다시보기(연한 주황 배경)는 시즌2 컨텐츠 재판매 상품입니다. 상품코드가 추후 확정되는 대로 정규 8과목 강사 구성도 갱신될 수 있습니다. 모집현황(일자별) 엑셀 원본 데이터입니다. 자동 생성 2026-09-04 15:51</p>
+  </div>
+
   <div id="s2" class="tab-content">
   <div class="section-title">📋 시즌2 일자별 모집 현황 (구매인원 누적)</div>
   <div class="data-wrap">
@@ -188,7 +204,7 @@ th.replay-col{background:#ffd8a8;color:#d9480f;}
       <tr><td><b>08/11<span>(화)</span></b></td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td><b>1</b></td><td><span class="text-up">▲ 1</span></td><td>0.1%</td><td>322,000원</td></tr>
   </tbody></table>
   </div>
-  <p style="font-size:11px;color:#868e96;">※ 시즌2는 2026-08-11 17시부터 모집 시작. 다시보기(연한 주황 배경)는 2026-08-14부터 신설 판매된 시즌1 컨텐츠 재판매 상품이며, 합계·매출에는 포함되어 있습니다. 모집현황(일자별) 엑셀 원본 데이터입니다. 자동 생성 2026-09-04 08:18</p>
+  <p style="font-size:11px;color:#868e96;">※ 시즌2는 2026-08-11 17시부터 모집 시작. 다시보기(연한 주황 배경)는 2026-08-14부터 신설 판매된 시즌1 컨텐츠 재판매 상품이며, 합계·매출에는 포함되어 있습니다. 모집현황(일자별) 엑셀 원본 데이터입니다. 자동 생성 2026-09-04 15:51</p>
   </div>
 
   <div id="s1" class="tab-content">
@@ -255,7 +271,7 @@ th.replay-col{background:#ffd8a8;color:#d9480f;}
       <tr><td><b>06/16<span>(화)</span></b></td><td>400</td><td>0</td><td>34</td><td>112</td><td>117</td><td>77</td><td>54</td><td>48</td><td><b>842</b></td><td><span class="text-up">▲ 842</span></td><td>266,702,000원</td></tr>
   </tbody></table>
   </div>
-  <p style="font-size:11px;color:#868e96;">※ 모집현황(일자별) 엑셀 원본 데이터입니다. 자동 생성 2026-09-04 08:18</p>
+  <p style="font-size:11px;color:#868e96;">※ 모집현황(일자별) 엑셀 원본 데이터입니다. 자동 생성 2026-09-04 15:51</p>
   </div>
 </div>
 <script>
