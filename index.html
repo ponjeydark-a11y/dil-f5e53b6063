@@ -42,6 +42,7 @@ th.replay-col{background:#ffd8a8;color:#d9480f;}
 th.newsubj-col{background:#a5d8ff;color:#1864ab;}
 .two-col-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
 .three-col-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.two-col-grid>div,.three-col-grid>div{min-width:0;}
 @media(max-width:900px){.three-col-grid{grid-template-columns:1fr 1fr;}}
 .aligned-table{table-layout:fixed;}
 .aligned-table th{white-space:normal;}
@@ -88,103 +89,127 @@ th.newsubj-col{background:#a5d8ff;color:#1864ab;}
 <div class="dashboard-container">
   <div class="header">
     <h1>📊 대인라 모집현황 대시보드</h1>
-    <div class="meta-info"><span>📅 <b>기준일:</b> 2026-09-09 (오픈 d+85)</span><span>⏱️ <b>시즌3 4일차</b> · 전년 매칭일 9/4</span></div>
+    <div class="meta-info"><span>📅 <b>기준일:</b> 2026-09-18 (오픈 d+94)</span><span>⏱️ <b>시즌3 11일차</b> · 전년 매칭일 9/15</span></div>
   </div>
   <div class="tabs">
     <button class="tab active" id="tb-dash" onclick="showTab('dash')">📊 대시보드</button>
     <button class="tab" id="tb-s3" onclick="showTab('s3')">📋 시즌3(일자별 데이터)</button>
     <button class="tab" id="tb-s2" onclick="showTab('s2')">📋 시즌2(일자별 데이터)</button>
     <button class="tab" id="tb-s1" onclick="showTab('s1')">📋 시즌1(일자별 데이터)</button>
+    <button class="tab" id="tb-y25" onclick="showTab('y25')">📋 25년도 모집인원</button>
   </div>
 
   <div id="dash" class="tab-content active">
   <div class="kpi-container">
-    <div class="kpi-card accent"><div class="kpi-title">누적 매출액</div><div class="kpi-value">1,365,243,200원</div><div class="kpi-sub">목표 대비 68.2% 달성 중</div></div>
-    <div class="kpi-card"><div class="kpi-title">금일 모집 현황</div><div class="kpi-value"><span style="color:#f03e3e;">▲56명</span></div><div style="color:#82c91e;font-weight:bold;font-size:16px;margin-top:3px;text-align:left;">0원</div><div class="kpi-sub">누적 모집 인원 1,499명</div></div>
-    <div class="kpi-card warning"><div class="kpi-title">경영계획 달성현황</div><div class="kpi-value">2,000,970,905원</div><div class="kpi-sub">차이 <span class="text-down">▼ 635,727,705원</span></div><div class="kpi-sub" style="margin-top:3px;">달성율 <span style="color:#1c7ed6;font-weight:bold;">68.2%</span></div></div>
-    <div class="kpi-card warning"><div class="kpi-title">전년 시즌3 동기 대비 인원</div><div class="kpi-value text-down">▼ 280명</div><div class="kpi-sub">시즌3 3일차 기준 · -54.79%</div></div>
+    <div class="kpi-card accent"><div class="kpi-title">누적 매출액</div><div class="kpi-value">1,574,037,800원</div><div class="kpi-sub">목표 대비 78.7% 달성 중</div></div>
+    <div class="kpi-card"><div class="kpi-title">금일 모집 현황</div><div class="kpi-value"><span style="color:#f03e3e;">▲0명</span></div><div style="color:#82c91e;font-weight:bold;font-size:16px;margin-top:3px;text-align:left;">0원</div><div class="kpi-sub">누적 모집 인원 2,334명</div></div>
+    <div class="kpi-card warning"><div class="kpi-title">경영계획 달성현황</div><div class="kpi-value">2,000,970,905원</div><div class="kpi-sub">차이 <span class="text-down">▼ 426,933,105원</span></div><div class="kpi-sub" style="margin-top:3px;">달성율 <span style="color:#1c7ed6;font-weight:bold;">78.7%</span></div></div>
+    <div class="kpi-card warning"><div class="kpi-title">전년 시즌3 동기 대비 인원</div><div class="kpi-value text-up">▲ 31명</div><div class="kpi-sub">시즌3 10일차 기준 · 3.03%</div></div>
   </div>
   <div class="section-title">📅 시즌별 매출 현황 (26년 vs 25년)</div>
   <div class="kpi-container">
-    <div class="kpi-card season1"><div class="kpi-title">시즌1</div><div class="kpi-value">646,992,000원</div><div class="kpi-sub">계획 523,800,625원 · <span class="text-up">▲ 123,191,375원</span></div><div class="kpi-sub">전년 561,235,000원 · <span class="text-up">▲ 85,757,000원</span></div></div><div class="kpi-card season2"><div class="kpi-title">시즌2</div><div class="kpi-value">542,177,500원</div><div class="kpi-sub">계획 498,980,369원 · <span class="text-up">▲ 43,197,131원</span></div><div class="kpi-sub">전년 482,162,200원 · <span class="text-up">▲ 60,015,300원</span></div></div><div class="kpi-card season3"><div class="kpi-title">시즌3</div><div class="kpi-value">176,073,700원</div><div class="kpi-sub">계획 481,587,231원 · <span class="text-down">▼ 305,513,531원</span></div><div class="kpi-sub">전년 418,369,200원 · <span class="text-down">▼ 242,295,500원</span></div></div><div class="kpi-card season4"><div class="kpi-title">시즌4</div><div class="kpi-value">0원</div><div class="kpi-sub">계획 496,602,680원 · <span class="text-down">▼ 496,602,680원</span></div><div class="kpi-sub">전년 340,508,000원 · <span class="text-down">▼ 340,508,000원</span></div></div>
+    <div class="kpi-card season1"><div class="kpi-title">시즌1</div><div class="kpi-value">646,992,000원</div><div class="kpi-sub">계획 523,800,625원 · <span class="text-up">▲ 123,191,375원</span></div><div class="kpi-sub">전년 561,235,000원 · <span class="text-up">▲ 85,757,000원</span></div></div><div class="kpi-card season2"><div class="kpi-title">시즌2</div><div class="kpi-value">542,177,500원</div><div class="kpi-sub">계획 498,980,369원 · <span class="text-up">▲ 43,197,131원</span></div><div class="kpi-sub">전년 482,162,200원 · <span class="text-up">▲ 60,015,300원</span></div></div><div class="kpi-card season3"><div class="kpi-title">시즌3</div><div class="kpi-value">384,868,300원</div><div class="kpi-sub">계획 481,587,231원 · <span class="text-down">▼ 96,718,931원</span></div><div class="kpi-sub">전년 418,369,200원 · <span class="text-down">▼ 33,500,900원</span></div></div><div class="kpi-card season4"><div class="kpi-title">시즌4</div><div class="kpi-value">0원</div><div class="kpi-sub">계획 496,602,680원 · <span class="text-down">▼ 496,602,680원</span></div><div class="kpi-sub">전년 340,508,000원 · <span class="text-down">▼ 340,508,000원</span></div></div>
   </div>
   <div class="section-title">① 경영계획 달성현황 (시즌3 → 시즌2 → 시즌1)</div>
   <div class="three-col-grid">
     <div>
-      <div class="data-wrap"><table style="font-size:12.5px;"><thead><tr><th style="width:15%;">구분</th><th style="width:28%;">목표</th><th style="width:28%;">현재 누적(시즌3 4일차)</th><th style="width:29%;">달성률</th></tr></thead><tbody>
-        <tr><td><b>강의</b></td><td>301,182,000원</td><td>109,642,500원</td><td><div class="progress-bar-container"><div class="progress-bar" style="width:36.40%;">36.4%</div></div></td></tr>
-        <tr><td><b>교재</b></td><td>180,405,231원</td><td>66,431,200원</td><td><div class="progress-bar-container"><div class="progress-bar" style="width:36.82%;">36.8%</div></div></td></tr>
-        <tr class="bg-total"><td>합 계</td><td>481,587,231원</td><td>176,073,700원</td><td><div class="progress-bar-container"><div class="progress-bar" style="width:36.56%;background:linear-gradient(90deg,#e8590c,#f08c00);">36.6%</div></div></td></tr>
+      <div class="data-wrap"><table style="font-size:12.5px;"><thead><tr><th style="width:15%;">구분</th><th style="width:28%;">목표</th><th style="width:28%;">현재 누적(시즌3 11일차)</th><th style="width:29%;">달성률</th></tr></thead><tbody>
+        <tr><td><b>강의</b></td><td>301,182,000원</td><td>230,447,500원</td><td><div class="progress-bar-container"><div class="progress-bar" style="width:76.51%;">76.5%</div></div></td></tr>
+        <tr><td><b>교재</b></td><td>180,405,231원</td><td>150,314,800원</td><td><div class="progress-bar-container"><div class="progress-bar" style="width:83.32%;">83.3%</div></div></td></tr>
+        <tr class="bg-total"><td>합 계</td><td>481,587,231원</td><td>380,762,300원</td><td><div class="progress-bar-container"><div class="progress-bar" style="width:79.06%;background:linear-gradient(90deg,#e8590c,#f08c00);">79.1%</div></div></td></tr>
       </tbody></table></div></div>
     <div>
-      <div class="data-wrap"><table style="font-size:12.5px;"><thead><tr><th style="width:15%;">구분</th><th style="width:28%;">목표</th><th style="width:28%;">현재 누적(시즌2 30일차)</th><th style="width:29%;">달성률</th></tr></thead><tbody>
+      <div class="data-wrap"><table style="font-size:12.5px;"><thead><tr><th style="width:15%;">구분</th><th style="width:28%;">목표</th><th style="width:28%;">현재 누적(시즌2 46일차)</th><th style="width:29%;">달성률</th></tr></thead><tbody>
         <tr><td><b>강의</b></td><td>309,687,500원</td><td>288,735,000원</td><td><div class="progress-bar-container"><div class="progress-bar" style="width:93.23%;">93.2%</div></div></td></tr>
         <tr><td><b>교재</b></td><td>189,292,869원</td><td>206,742,000원</td><td><div class="progress-bar-container"><div class="progress-bar" style="width:100.00%;">109.2%</div></div></td></tr>
         <tr class="bg-total"><td>합 계</td><td>498,980,369원</td><td>542,177,500원</td><td><div class="progress-bar-container"><div class="progress-bar" style="width:100.00%;background:linear-gradient(90deg,#2b8a3e,#37b24d);">108.7%</div></div></td></tr>
       </tbody></table></div></div>
     <div>
-      <div class="data-wrap"><table style="font-size:12.5px;"><thead><tr><th style="width:15%;">구분</th><th style="width:28%;">목표</th><th style="width:28%;">현재 누적(d+85)</th><th style="width:29%;">달성률</th></tr></thead><tbody>
+      <div class="data-wrap"><table style="font-size:12.5px;"><thead><tr><th style="width:15%;">구분</th><th style="width:28%;">목표</th><th style="width:28%;">현재 누적(d+94)</th><th style="width:29%;">달성률</th></tr></thead><tbody>
         <tr><td><b>강의</b></td><td>326,200,000원</td><td>390,925,000원</td><td><div class="progress-bar-container"><div class="progress-bar" style="width:100.00%;">119.8%</div></div></td></tr>
         <tr><td><b>교재</b></td><td>197,600,625원</td><td>256,067,000원</td><td><div class="progress-bar-container"><div class="progress-bar" style="width:100.00%;">129.6%</div></div></td></tr>
         <tr class="bg-total"><td>합 계</td><td>523,800,625원</td><td>646,992,000원</td><td><div class="progress-bar-container"><div class="progress-bar" style="width:100.00%;background:linear-gradient(90deg,#2b8a3e,#37b24d);">123.5%</div></div></td></tr>
       </tbody></table></div></div>
   </div>
-  <div class="section-title">② 전년도 시즌3 동일일차 비교 (시즌3 3일차 · 전년 매칭일 9/4)</div>
+  <div class="section-title">② 전년도 시즌3 동일일차 비교 (시즌3 10일차 · 전년 매칭일 9/15)</div>
   
+  <p style="font-size:12px;color:#868e96;margin:-10px 0 12px;">※ 26년도 모집인원·총매출은 25년에 없던 신설 과목(과탐2: 물2/화2/생2/지2)을 제외한 정규 8과목 기준입니다.</p>
   <div class="data-wrap"><table><thead><tr><th>구분</th><th>26년</th><th>25년 시즌3 동일일차</th><th>증감</th><th>증감율</th></tr></thead><tbody>
-    <tr><td><b>총 매출</b></td><td>176,073,700원</td><td>166,548,600원</td><td><span class="text-up">▲ 9,525,100원</span></td><td class="text-up">5.72%</td></tr>
-    <tr><td><b>모집인원</b></td><td>1,499명</td><td>681명</td><td><span class="text-up">▲ 818명</span></td><td class="text-up">120.12%</td></tr>
+    <tr><td><b>총 매출</b></td><td>252,332,500원</td><td>325,031,400원</td><td><span class="text-down">▼ 72,698,900원</span></td><td class="text-down">-22.37%</td></tr>
+    <tr><td><b>모집인원</b></td><td>1,054명</td><td>1,344명</td><td><span class="text-down">▼ 290명</span></td><td class="text-down">-21.58%</td></tr>
   </tbody></table></div>
-  <div class="section-title">③ 강사별 모집현황 (시즌3 3일차 기준, 이정수=이정수+이정수(VOD))</div>
+  <div class="section-title">③ 강사별 모집현황 (시즌3 10일차 기준, 이정수=이정수+이정수(VOD))</div>
   <div class="data-wrap"><table class="aligned-table table-wide"><colgroup><col class="c-name"><col class="c-cur"><col class="c-daily"><col class="c-sales"><col class="c-25"><col class="c-prevdiff"><col class="c-s1"><col class="c-rate2"><col class="c-25fin"><col class="c-findiff"></colgroup><thead><tr><th>강사명</th><th>26년 현재</th><th>전일 대비 증감</th><th>강사별 매출액</th><th>25년(동기간)</th><th>전년 대비 증감</th><th>26년 시즌1</th><th>모집율</th><th>25년 최종</th><th>최종 대비</th></tr></thead><tbody>
-      <tr><td><b>이정수</b></td><td>124명</td><td><span class="text-up">▲ 33</span></td><td>25,349,000원</td><td>198명</td><td><span class="text-down">▼ 74</span></td><td>872명</td><td>14.2%</td><td>495명</td><td><span class="text-down">▼ 371</span></td></tr>
-      <tr><td><b>이창훈</b></td><td>10명</td><td><span class="text-up">▲ 1</span></td><td>2,947,500원</td><td>26명</td><td><span class="text-down">▼ 16</span></td><td>74명</td><td>13.5%</td><td>64명</td><td><span class="text-down">▼ 54</span></td></tr>
-      <tr><td><b>권현석</b></td><td>29명</td><td><span class="text-up">▲ 3</span></td><td>8,372,000원</td><td>129명</td><td><span class="text-down">▼ 100</span></td><td>264명</td><td>11.0%</td><td>290명</td><td><span class="text-down">▼ 261</span></td></tr>
-      <tr><td><b>신민우</b></td><td>22명</td><td><span class="text-up">▲ 5</span></td><td>5,644,000원</td><td>92명</td><td><span class="text-down">▼ 70</span></td><td>268명</td><td>8.2%</td><td>222명</td><td><span class="text-down">▼ 200</span></td></tr>
-      <tr><td><b>최은정</b></td><td>22명</td><td><span class="text-up">▲ 9</span></td><td>2,734,000원</td><td>19명</td><td><span class="text-up">▲ 3</span></td><td>222명</td><td>9.9%</td><td>52명</td><td><span class="text-down">▼ 30</span></td></tr>
-      <tr><td><b>홍재영</b></td><td>10명</td><td><span class="text-up">▲ 4</span></td><td>1,254,000원</td><td>33명</td><td><span class="text-down">▼ 23</span></td><td>127명</td><td>7.9%</td><td>127명</td><td><span class="text-down">▼ 117</span></td></tr>
-      <tr><td><b>이가흠</b></td><td>14명</td><td><span class="text-up">▲ 1</span></td><td>2,652,000원</td><td>14명</td><td><span class="text-up">▲ 0</span></td><td>106명</td><td>13.2%</td><td>63명</td><td><span class="text-down">▼ 49</span></td></tr>
-      <tr class="bg-total"><td><b>합 계</b></td><td>231명</td><td><span class="text-up">▲ 56</span></td><td>48,952,500원</td><td>511명</td><td><span class="text-down">▼ 280</span></td><td>1,933명</td><td>12.0%</td><td>1,313명</td><td><span class="text-down">▼ 1,082</span></td></tr>
+      <tr><td><b>이정수</b></td><td>493명</td><td><span class="text-up">▲ 48</span></td><td>123,432,000원</td><td>387명</td><td><span class="text-up">▲ 106</span></td><td>872명</td><td>56.5%</td><td>495명</td><td><span class="text-down">▼ 2</span></td></tr>
+      <tr><td><b>이창훈</b></td><td>43명</td><td><span class="text-up">▲ 10</span></td><td>10,692,500원</td><td>47명</td><td><span class="text-down">▼ 4</span></td><td>74명</td><td>58.1%</td><td>64명</td><td><span class="text-down">▼ 21</span></td></tr>
+      <tr><td><b>권현석</b></td><td>139명</td><td><span class="text-up">▲ 20</span></td><td>37,218,000원</td><td>236명</td><td><span class="text-down">▼ 97</span></td><td>264명</td><td>52.7%</td><td>290명</td><td><span class="text-down">▼ 151</span></td></tr>
+      <tr><td><b>신민우</b></td><td>152명</td><td><span class="text-up">▲ 22</span></td><td>42,674,000원</td><td>181명</td><td><span class="text-down">▼ 29</span></td><td>268명</td><td>56.7%</td><td>222명</td><td><span class="text-down">▼ 70</span></td></tr>
+      <tr><td><b>최은정</b></td><td>99명</td><td><span class="text-up">▲ 14</span></td><td>18,097,000원</td><td>40명</td><td><span class="text-up">▲ 59</span></td><td>222명</td><td>44.6%</td><td>52명</td><td><span class="text-up">▲ 47</span></td></tr>
+      <tr><td><b>홍재영</b></td><td>58명</td><td><span class="text-up">▲ 15</span></td><td>8,987,000원</td><td>89명</td><td><span class="text-down">▼ 31</span></td><td>127명</td><td>45.7%</td><td>127명</td><td><span class="text-down">▼ 69</span></td></tr>
+      <tr><td><b>이가흠</b></td><td>70명</td><td><span class="text-up">▲ 12</span></td><td>11,232,000원</td><td>43명</td><td><span class="text-up">▲ 27</span></td><td>106명</td><td>66.0%</td><td>63명</td><td><span class="text-up">▲ 7</span></td></tr>
+      <tr class="bg-total"><td><b>합 계</b></td><td>1,054명</td><td><span class="text-up">▲ 141</span></td><td>252,332,500원</td><td>1,023명</td><td><span class="text-up">▲ 31</span></td><td>1,933명</td><td>54.5%</td><td>1,313명</td><td><span class="text-down">▼ 259</span></td></tr>
   </tbody></table></div>
-  <div class="section-title">④ 시즌2 다시보기 강사별 현황 (26년 신설상품, 매출은 시즌3에 합산, 모집 9/14부터)</div>
-  <div class="data-wrap"><table class="aligned-table table-narrow"><colgroup><col class="c-name"><col class="c-cur"><col class="c-daily"><col class="c-sales"><col class="c-goal"><col class="c-rate"></colgroup><thead><tr><th>강사명</th><th>26년 현재</th><th>전일 대비 증감</th><th>매출액</th><th>26년 목표</th><th>달성율</th></tr></thead><tbody>
-      <tr><td><b>이정수(re)</b></td><td>0명</td><td><span class="text-up">▲ 0</span></td><td>0원</td><td>30명</td><td>0.0%</td></tr>
+  <div class="section-title">④ 시즌2 다시보기 · 과탐2 신규과목 현황 (26년 신설상품, 매출은 시즌3에 합산)</div>
+  <div class="two-col-grid">
+    <div>
+      <div style="font-size:13px;font-weight:bold;color:#495057;margin-bottom:8px;">시즌2 다시보기 강사별 현황</div>
+      <div class="data-wrap"><table class="aligned-table table-narrow"><colgroup><col class="c-name"><col class="c-cur"><col class="c-daily"><col class="c-sales"><col class="c-goal"><col class="c-rate"></colgroup><thead><tr><th>강사명</th><th>26년 현재</th><th>전일 대비 증감</th><th>매출액</th><th>26년 목표</th><th>달성율</th></tr></thead><tbody>
+      <tr><td><b>이정수(re)</b></td><td>5명</td><td><span class="text-up">▲ 0</span></td><td>1,405,000원</td><td>30명</td><td>16.7%</td></tr>
       <tr><td><b>이창훈(re)</b></td><td>0명</td><td><span class="text-up">▲ 0</span></td><td>0원</td><td>20명</td><td>0.0%</td></tr>
-      <tr><td><b>권현석(re)</b></td><td>0명</td><td><span class="text-up">▲ 0</span></td><td>0원</td><td>30명</td><td>0.0%</td></tr>
-      <tr><td><b>신민우(re)</b></td><td>0명</td><td><span class="text-up">▲ 0</span></td><td>0원</td><td>30명</td><td>0.0%</td></tr>
-      <tr><td><b>최은정(re)</b></td><td>0명</td><td><span class="text-up">▲ 0</span></td><td>0원</td><td>30명</td><td>0.0%</td></tr>
-      <tr><td><b>홍재영(re)</b></td><td>0명</td><td><span class="text-up">▲ 0</span></td><td>0원</td><td>20명</td><td>0.0%</td></tr>
-      <tr><td><b>이가흠(re)</b></td><td>0명</td><td><span class="text-up">▲ 0</span></td><td>0원</td><td>20명</td><td>0.0%</td></tr>
-      <tr class="bg-total"><td><b>합 계</b></td><td>0명</td><td><span class="text-up">▲ 0</span></td><td>0원</td><td>180명</td><td>0.0%</td></tr>
-  </tbody></table></div>
+      <tr><td><b>권현석(re)</b></td><td>1명</td><td><span class="text-up">▲ 0</span></td><td>322,000원</td><td>30명</td><td>3.3%</td></tr>
+      <tr><td><b>신민우(re)</b></td><td>4명</td><td><span class="text-up">▲ 0</span></td><td>1,328,000원</td><td>30명</td><td>13.3%</td></tr>
+      <tr><td><b>최은정(re)</b></td><td>2명</td><td><span class="text-up">▲ 0</span></td><td>434,000원</td><td>30명</td><td>6.7%</td></tr>
+      <tr><td><b>홍재영(re)</b></td><td>1명</td><td><span class="text-up">▲ 0</span></td><td>209,000원</td><td>20명</td><td>5.0%</td></tr>
+      <tr><td><b>이가흠(re)</b></td><td>2명</td><td><span class="text-up">▲ 0</span></td><td>408,000원</td><td>20명</td><td>10.0%</td></tr>
+      <tr class="bg-total"><td><b>합 계</b></td><td>15명</td><td><span class="text-up">▲ 0</span></td><td>4,106,000원</td><td>180명</td><td>8.3%</td></tr>
+      </tbody></table></div>
+    </div>
+    <div>
+      <div style="font-size:13px;font-weight:bold;color:#495057;margin-bottom:8px;">과탐2 신규 4과목 현황</div>
+      <div class="data-wrap"><table class="aligned-table table-narrow"><colgroup><col class="c-name"><col class="c-cur"><col class="c-daily"><col class="c-sales"><col class="c-goal"></colgroup><thead><tr><th>과목</th><th>인원</th><th>전일 대비 증감</th><th>매출액</th><th>대기인원</th></tr></thead><tbody>
+      <tr><td><b>물2</b></td><td>359명</td><td><span class="text-up">▲ 0</span></td><td>36,343,600원</td><td>332명</td></tr>
+      <tr><td><b>화2</b></td><td>284명</td><td><span class="text-up">▲ 0</span></td><td>28,558,600원</td><td>180명</td></tr>
+      <tr><td><b>생2</b></td><td>347명</td><td><span class="text-up">▲ 0</span></td><td>34,761,400원</td><td>275명</td></tr>
+      <tr><td><b>지2</b></td><td>284명</td><td><span class="text-up">▲ 0</span></td><td>28,766,200원</td><td>180명</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
   <div class="section-title">⑤ 강사별 실강의·실교재 구매건수 (시즌3 현재 누적)</div>
   <div class="data-wrap"><table><thead><tr><th>강사명</th><th>실강의 구매건수</th><th>실교재 구매건수</th><th>차이 (실강−실교재)</th><th>교재/강의 비율</th></tr></thead><tbody>
-      <tr><td><b>이정수</b></td><td>91</td><td>89</td><td><b>2</b></td><td>97.8%</td></tr>
-      <tr><td><b>이창훈</b></td><td>9</td><td>9</td><td><b>0</b></td><td>100.0%</td></tr>
-      <tr><td><b>권현석</b></td><td>26</td><td>26</td><td><b>0</b></td><td>100.0%</td></tr>
-      <tr><td><b>신민우</b></td><td>17</td><td>17</td><td><b>0</b></td><td>100.0%</td></tr>
-      <tr><td><b>최은정</b></td><td>13</td><td>12</td><td><b>1</b></td><td>92.3%</td></tr>
-      <tr><td><b>홍재영</b></td><td>6</td><td>6</td><td><b>0</b></td><td>100.0%</td></tr>
-      <tr><td><b>이가흠</b></td><td>13</td><td>13</td><td><b>0</b></td><td>100.0%</td></tr>
-      <tr class="bg-total"><td><b>합 계</b></td><td>175</td><td>172</td><td><b>3</b></td><td>98.3%</td></tr>
+      <tr><td><b>이정수</b></td><td>444</td><td>432</td><td><b>12</b></td><td>97.3%</td></tr>
+      <tr><td><b>이창훈</b></td><td>33</td><td>32</td><td><b>1</b></td><td>97.0%</td></tr>
+      <tr><td><b>권현석</b></td><td>117</td><td>114</td><td><b>3</b></td><td>97.4%</td></tr>
+      <tr><td><b>신민우</b></td><td>130</td><td>127</td><td><b>3</b></td><td>97.7%</td></tr>
+      <tr><td><b>최은정</b></td><td>85</td><td>81</td><td><b>4</b></td><td>95.3%</td></tr>
+      <tr><td><b>홍재영</b></td><td>43</td><td>43</td><td><b>0</b></td><td>100.0%</td></tr>
+      <tr><td><b>이가흠</b></td><td>56</td><td>53</td><td><b>3</b></td><td>94.6%</td></tr>
+      <tr class="bg-total"><td><b>합 계</b></td><td>908</td><td>882</td><td><b>26</b></td><td>97.1%</td></tr>
   </tbody></table></div>
-  <p style="font-size:11px;color:#868e96;">※ 25년 강사별 수치는 과목/강사 매칭 참고값(영어: 26년 최은정 / 25년 김대순). 상단 '전년 시즌3 동기 대비 인원'은 강사별 합계(③) 기준입니다. ②③은 시즌3의 오픈 경과 일차(day-index)로 전년과 매칭합니다. 시즌1·시즌2는 별도로 ①에서 목표 대비 진척도로 표시합니다. ④ 시즌2 다시보기는 26년 신설 상품으로 전년 비교 데이터가 없으며, 모집은 9/14부터 시작됩니다(매출은 시즌3 매출에 합산).</p>
+  <p style="font-size:11px;color:#868e96;">※ 25년 강사별 수치는 과목/강사 매칭 참고값(영어: 26년 최은정 / 25년 김대순). 상단 '전년 시즌3 동기 대비 인원'은 강사별 합계(③) 기준입니다. ②③은 시즌3의 오픈 경과 일차(day-index)로 전년과 매칭합니다. 시즌1·시즌2는 별도로 ①에서 목표 대비 진척도로 표시합니다. ④ 시즌2 다시보기는 26년 신설 상품으로 전년 비교 데이터가 없습니다(매출은 시즌3 매출에 합산). 과탐2 대기인원은 관리자페이지 상품별 "대기자" 값의 최신 스냅샷입니다.</p>
   </div>
 
   <div id="s3" class="tab-content">
   <div class="section-title">📋 시즌3 일자별 모집 현황 (구매인원 누적)</div>
   <div class="data-wrap">
   <table><thead>
-    <tr><th rowspan="2">일자</th><th colspan="8">정규 모집</th><th colspan="4" class="newsubj-col">신규 4과목</th><th colspan="7" class="replay-col">다시보기 (시즌2 컨텐츠)</th><th rowspan="2">합계</th><th rowspan="2">전일대비</th><th rowspan="2">176,073,700원</th></tr>
+    <tr><th rowspan="2">일자</th><th colspan="8">정규 모집</th><th colspan="4" class="newsubj-col">신규 4과목</th><th colspan="7" class="replay-col">다시보기 (시즌2 컨텐츠)</th><th rowspan="2">합계</th><th rowspan="2">전일대비</th><th rowspan="2">384,868,300원</th></tr>
     <tr><th>이정수</th><th>이정수(VOD)</th><th>이창훈</th><th>권현석</th><th>신민우</th><th>최은정</th><th>홍재영</th><th>이가흠</th><th class="newsubj-col">물2</th><th class="newsubj-col">화2</th><th class="newsubj-col">생2</th><th class="newsubj-col">지2</th><th class="replay-col">이정수</th><th class="replay-col">이창훈</th><th class="replay-col">권현석</th><th class="replay-col">신민우</th><th class="replay-col">최은정</th><th class="replay-col">홍재영</th><th class="replay-col">이가흠</th></tr>
   </thead><tbody>
+      <tr><td><b>09/18<span>(금)</span></b></td><td>412</td><td>81</td><td>43</td><td>139</td><td>152</td><td>99</td><td>58</td><td>70</td><td class="newsubj-col">354</td><td class="newsubj-col">286</td><td class="newsubj-col">345</td><td class="newsubj-col">295</td><td class="replay-col">5</td><td class="replay-col">0</td><td class="replay-col">1</td><td class="replay-col">4</td><td class="replay-col">2</td><td class="replay-col">1</td><td class="replay-col">2</td><td><b>1,069</b></td><td><span class="text-up">▲ 141</span></td><td>41,749,900원</td></tr>
+      <tr><td><b>09/17<span>(목)</span></b></td><td>375</td><td>70</td><td>33</td><td>119</td><td>130</td><td>85</td><td>43</td><td>58</td><td class="newsubj-col">359</td><td class="newsubj-col">284</td><td class="newsubj-col">347</td><td class="newsubj-col">284</td><td class="replay-col">5</td><td class="replay-col">0</td><td class="replay-col">1</td><td class="replay-col">4</td><td class="replay-col">2</td><td class="replay-col">1</td><td class="replay-col">2</td><td><b>928</b></td><td>0</td><td>0원</td></tr>
+      <tr><td><b>09/16<span>(수)</span></b></td><td>375</td><td>70</td><td>33</td><td>119</td><td>130</td><td>85</td><td>43</td><td>58</td><td class="newsubj-col">359</td><td class="newsubj-col">284</td><td class="newsubj-col">347</td><td class="newsubj-col">284</td><td class="replay-col">5</td><td class="replay-col">0</td><td class="replay-col">1</td><td class="replay-col">4</td><td class="replay-col">2</td><td class="replay-col">1</td><td class="replay-col">2</td><td><b>928</b></td><td>0</td><td>0원</td></tr>
+      <tr><td><b>09/15<span>(화)</span></b></td><td>375</td><td>70</td><td>33</td><td>119</td><td>130</td><td>85</td><td>43</td><td>58</td><td class="newsubj-col">359</td><td class="newsubj-col">284</td><td class="newsubj-col">347</td><td class="newsubj-col">284</td><td class="replay-col">5</td><td class="replay-col">0</td><td class="replay-col">1</td><td class="replay-col">4</td><td class="replay-col">2</td><td class="replay-col">1</td><td class="replay-col">2</td><td><b>928</b></td><td>0</td><td>0원</td></tr>
+      <tr><td><b>09/14<span>(월)</span></b></td><td>375</td><td>70</td><td>33</td><td>119</td><td>130</td><td>85</td><td>43</td><td>58</td><td class="newsubj-col">359</td><td class="newsubj-col">284</td><td class="newsubj-col">347</td><td class="newsubj-col">284</td><td class="replay-col">5</td><td class="replay-col">0</td><td class="replay-col">1</td><td class="replay-col">4</td><td class="replay-col">2</td><td class="replay-col">1</td><td class="replay-col">2</td><td><b>928</b></td><td><span class="text-up">▲ 245</span></td><td>68,256,000원</td></tr>
+      <tr><td><b>09/13<span style="color:#e03131;">(일)</span></b></td><td>293</td><td>52</td><td>23</td><td>80</td><td>99</td><td>63</td><td>32</td><td>41</td><td class="newsubj-col">359</td><td class="newsubj-col">278</td><td class="newsubj-col">345</td><td class="newsubj-col">280</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td><b>683</b></td><td><span class="text-up">▲ 236</span></td><td>66,040,900원</td></tr>
+      <tr><td><b>09/12<span style="color:#1971c2;">(토)</span></b></td><td>196</td><td>33</td><td>14</td><td>52</td><td>61</td><td>39</td><td>23</td><td>29</td><td class="newsubj-col">359</td><td class="newsubj-col">278</td><td class="newsubj-col">345</td><td class="newsubj-col">280</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td><b>447</b></td><td><span class="text-up">▲ 153</span></td><td>42,688,800원</td></tr>
+      <tr><td><b>09/11<span>(금)</span></b></td><td>130</td><td>18</td><td>12</td><td>35</td><td>35</td><td>27</td><td>17</td><td>20</td><td class="newsubj-col">360</td><td class="newsubj-col">279</td><td class="newsubj-col">346</td><td class="newsubj-col">280</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td><b>294</b></td><td><span class="text-up">▲ 63</span></td><td>31,808,900원</td></tr>
       <tr><td><b>09/10<span>(목)</span></b></td><td>106</td><td>18</td><td>10</td><td>29</td><td>22</td><td>22</td><td>10</td><td>14</td><td class="newsubj-col">360</td><td class="newsubj-col">280</td><td class="newsubj-col">346</td><td class="newsubj-col">282</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td><b>231</b></td><td><span class="text-up">▲ 56</span></td><td>0원</td></tr>
       <tr><td><b>09/09<span>(수)</span></b></td><td>76</td><td>15</td><td>9</td><td>26</td><td>17</td><td>13</td><td>6</td><td>13</td><td class="newsubj-col">360</td><td class="newsubj-col">280</td><td class="newsubj-col">346</td><td class="newsubj-col">282</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td><b>175</b></td><td><span class="text-up">▲ 90</span></td><td>26,337,400원</td></tr>
       <tr><td><b>09/08<span>(화)</span></b></td><td>35</td><td>9</td><td>3</td><td>13</td><td>7</td><td>6</td><td>4</td><td>8</td><td class="newsubj-col">361</td><td class="newsubj-col">281</td><td class="newsubj-col">346</td><td class="newsubj-col">282</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td><b>85</b></td><td><span class="text-up">▲ 49</span></td><td>16,949,200원</td></tr>
       <tr><td><b>09/07<span>(월)</span></b></td><td>14</td><td>3</td><td>1</td><td>3</td><td>5</td><td>4</td><td>3</td><td>3</td><td class="newsubj-col">356</td><td class="newsubj-col">279</td><td class="newsubj-col">348</td><td class="newsubj-col">282</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td><b>36</b></td><td><span class="text-up">▲ 36</span></td><td>132,787,100원</td></tr>
   </tbody></table>
   </div>
-  <p style="font-size:11px;color:#868e96;">※ 시즌3은 2026-09-07 17시부터 모집 시작 예정입니다(현재 표시된 9/7 행은 개강 전 0으로 초기화된 값). 신규 4과목(물2/화2/생2/지2, 연한 파란 배경)이 이번 시즌부터 추가되었고, 다시보기(연한 주황 배경)는 시즌2 컨텐츠 재판매 상품입니다. <b>합계·전일대비는 정규 8과목 + 다시보기 기준이며, 신규 4과목은 별도 집계로 합계에서 제외됩니다(매출에는 포함).</b> 상품코드가 추후 확정되는 대로 정규 8과목 강사 구성도 갱신될 수 있습니다. 모집현황(일자별) 엑셀 원본 데이터입니다. 자동 생성 2026-09-10 02:09</p>
+  <p style="font-size:11px;color:#868e96;">※ 시즌3은 2026-09-07 17시부터 모집 시작 예정입니다(현재 표시된 9/7 행은 개강 전 0으로 초기화된 값). 신규 4과목(물2/화2/생2/지2, 연한 파란 배경)이 이번 시즌부터 추가되었고, 다시보기(연한 주황 배경)는 시즌2 컨텐츠 재판매 상품입니다. <b>합계·전일대비는 정규 8과목 + 다시보기 기준이며, 신규 4과목은 별도 집계로 합계에서 제외됩니다(매출에는 포함).</b> 상품코드가 추후 확정되는 대로 정규 8과목 강사 구성도 갱신될 수 있습니다. 모집현황(일자별) 엑셀 원본 데이터입니다. 자동 생성 2026-09-18 02:27</p>
   </div>
 
   <div id="s2" class="tab-content">
@@ -195,6 +220,15 @@ th.newsubj-col{background:#a5d8ff;color:#1864ab;}
     <tr><th>이정수</th><th>이정수(VOD)</th><th>이창훈</th><th>권현석</th><th>신민우</th><th>최은정</th><th>홍재영</th><th>이가흠</th><th class="replay-col">이정수</th><th class="replay-col">이창훈</th><th class="replay-col">권현석</th><th class="replay-col">신민우</th><th class="replay-col">최은정</th><th class="replay-col">홍재영</th><th class="replay-col">이가흠</th></tr>
   </thead><tbody>
       <tr class="bg-total"><td><b><b style="color:#e8590c;">[최종]</b></b></td><td>539</td><td>246</td><td>62</td><td>252</td><td>253</td><td>192</td><td>116</td><td>111</td><td class="replay-col">52</td><td class="replay-col">6</td><td class="replay-col">32</td><td class="replay-col">18</td><td class="replay-col">11</td><td class="replay-col">8</td><td class="replay-col">10</td><td><b>1,908</b></td><td><span class="text-down">▼ 7</span></td><td>98.7%</td><td>-1,837,000원</td></tr>
+      <tr><td><b>09/18<span>(금)</span></b></td><td>537</td><td>242</td><td>62</td><td>251</td><td>250</td><td>190</td><td>115</td><td>108</td><td class="replay-col">52</td><td class="replay-col">6</td><td class="replay-col">32</td><td class="replay-col">18</td><td class="replay-col">11</td><td class="replay-col">8</td><td class="replay-col">10</td><td><b>1,892</b></td><td><span class="text-down">▼ 1</span></td><td>97.9%</td><td>-249,000원</td></tr>
+      <tr><td><b>09/17<span>(목)</span></b></td><td>537</td><td>242</td><td>62</td><td>251</td><td>250</td><td>190</td><td>115</td><td>109</td><td class="replay-col">52</td><td class="replay-col">6</td><td class="replay-col">32</td><td class="replay-col">18</td><td class="replay-col">11</td><td class="replay-col">8</td><td class="replay-col">10</td><td><b>1,893</b></td><td>0</td><td>97.9%</td><td>0원</td></tr>
+      <tr><td><b>09/16<span>(수)</span></b></td><td>537</td><td>242</td><td>62</td><td>251</td><td>250</td><td>190</td><td>115</td><td>109</td><td class="replay-col">52</td><td class="replay-col">6</td><td class="replay-col">32</td><td class="replay-col">18</td><td class="replay-col">11</td><td class="replay-col">8</td><td class="replay-col">10</td><td><b>1,893</b></td><td>0</td><td>97.9%</td><td>0원</td></tr>
+      <tr><td><b>09/15<span>(화)</span></b></td><td>537</td><td>242</td><td>62</td><td>251</td><td>250</td><td>190</td><td>115</td><td>109</td><td class="replay-col">52</td><td class="replay-col">6</td><td class="replay-col">32</td><td class="replay-col">18</td><td class="replay-col">11</td><td class="replay-col">8</td><td class="replay-col">10</td><td><b>1,893</b></td><td>0</td><td>97.9%</td><td>0원</td></tr>
+      <tr><td><b>09/14<span>(월)</span></b></td><td>537</td><td>242</td><td>62</td><td>251</td><td>250</td><td>190</td><td>115</td><td>109</td><td class="replay-col">52</td><td class="replay-col">6</td><td class="replay-col">32</td><td class="replay-col">18</td><td class="replay-col">11</td><td class="replay-col">8</td><td class="replay-col">10</td><td><b>1,893</b></td><td><span class="text-down">▼ 1</span></td><td>97.9%</td><td>-555,000원</td></tr>
+      <tr><td><b>09/13<span style="color:#e03131;">(일)</span></b></td><td>537</td><td>242</td><td>62</td><td>251</td><td>250</td><td>191</td><td>115</td><td>109</td><td class="replay-col">52</td><td class="replay-col">6</td><td class="replay-col">32</td><td class="replay-col">18</td><td class="replay-col">11</td><td class="replay-col">8</td><td class="replay-col">10</td><td><b>1,894</b></td><td><span class="text-down">▼ 1</span></td><td>98.0%</td><td>-204,000원</td></tr>
+      <tr><td><b>09/12<span style="color:#1971c2;">(토)</span></b></td><td>537</td><td>242</td><td>62</td><td>251</td><td>250</td><td>191</td><td>115</td><td>110</td><td class="replay-col">52</td><td class="replay-col">6</td><td class="replay-col">32</td><td class="replay-col">18</td><td class="replay-col">11</td><td class="replay-col">8</td><td class="replay-col">10</td><td><b>1,895</b></td><td>0</td><td>98.0%</td><td>162,000원</td></tr>
+      <tr><td><b>09/11<span>(금)</span></b></td><td>537</td><td>242</td><td>62</td><td>251</td><td>250</td><td>191</td><td>115</td><td>110</td><td class="replay-col">52</td><td class="replay-col">6</td><td class="replay-col">32</td><td class="replay-col">18</td><td class="replay-col">11</td><td class="replay-col">8</td><td class="replay-col">10</td><td><b>1,895</b></td><td><span class="text-down">▼ 6</span></td><td>98.0%</td><td>-1,114,000원</td></tr>
+      <tr><td><b>09/10<span>(목)</span></b></td><td>538</td><td>243</td><td>62</td><td>252</td><td>251</td><td>191</td><td>116</td><td>111</td><td class="replay-col">52</td><td class="replay-col">6</td><td class="replay-col">32</td><td class="replay-col">18</td><td class="replay-col">11</td><td class="replay-col">8</td><td class="replay-col">10</td><td><b>1,901</b></td><td><span class="text-down">▼ 5</span></td><td>98.3%</td><td>-1,355,000원</td></tr>
       <tr><td><b>09/09<span>(수)</span></b></td><td>538</td><td>245</td><td>62</td><td>252</td><td>253</td><td>192</td><td>116</td><td>111</td><td class="replay-col">52</td><td class="replay-col">6</td><td class="replay-col">32</td><td class="replay-col">18</td><td class="replay-col">11</td><td class="replay-col">8</td><td class="replay-col">10</td><td><b>1,906</b></td><td><span class="text-down">▼ 9</span></td><td>98.6%</td><td>-3,174,000원</td></tr>
       <tr><td><b>09/08<span>(화)</span></b></td><td>541</td><td>247</td><td>62</td><td>254</td><td>255</td><td>192</td><td>116</td><td>111</td><td class="replay-col">52</td><td class="replay-col">6</td><td class="replay-col">32</td><td class="replay-col">18</td><td class="replay-col">11</td><td class="replay-col">8</td><td class="replay-col">10</td><td><b>1,915</b></td><td>0</td><td>99.1%</td><td>0원</td></tr>
       <tr><td><b>09/07<span>(월)</span></b></td><td>541</td><td>247</td><td>62</td><td>254</td><td>255</td><td>192</td><td>116</td><td>111</td><td class="replay-col">52</td><td class="replay-col">6</td><td class="replay-col">32</td><td class="replay-col">18</td><td class="replay-col">11</td><td class="replay-col">8</td><td class="replay-col">10</td><td><b>1,915</b></td><td><span class="text-up">▲ 84</span></td><td>99.1%</td><td>24,373,500원</td></tr>
@@ -227,14 +261,14 @@ th.newsubj-col{background:#a5d8ff;color:#1864ab;}
       <tr><td><b>08/11<span>(화)</span></b></td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td class="replay-col">0</td><td><b>1</b></td><td><span class="text-up">▲ 1</span></td><td>0.1%</td><td>322,000원</td></tr>
   </tbody></table>
   </div>
-  <p style="font-size:11px;color:#868e96;">※ 시즌2는 2026-08-11 17시부터 모집 시작. 정규 모집은 2026-09-07 마감되어, 맨 위 <b>[최종]</b> 행 하나만 매일 그 시점의 절대 인원으로 덮어써 갱신됩니다(환불 등으로 줄어들 수 있어 증가분이 아닌 실제 총계 기준, 날짜 표시는 생략). 다시보기(연한 주황 배경)는 2026-08-14부터 신설 판매된 시즌1 컨텐츠 재판매 상품으로, 정규 마감과 무관하게 계속 일자별로 갱신됩니다. <b>[최종] 행의 다시보기 칸과 합계도 다시보기 최신값을 함께 반영합니다.</b> 모집현황(일자별) 엑셀 원본 데이터입니다. 자동 생성 2026-09-10 02:09</p>
+  <p style="font-size:11px;color:#868e96;">※ 시즌2는 2026-08-11 17시부터 모집 시작. 정규 모집은 2026-09-07 마감되어, 맨 위 <b>[최종]</b> 행 하나만 매일 그 시점의 절대 인원으로 덮어써 갱신됩니다(환불 등으로 줄어들 수 있어 증가분이 아닌 실제 총계 기준, 날짜 표시는 생략). 다시보기(연한 주황 배경)는 2026-08-14부터 신설 판매된 시즌1 컨텐츠 재판매 상품으로, 정규 마감과 무관하게 계속 일자별로 갱신됩니다. <b>[최종] 행의 다시보기 칸과 합계도 다시보기 최신값을 함께 반영합니다.</b> 모집현황(일자별) 엑셀 원본 데이터입니다. 자동 생성 2026-09-18 02:27</p>
   </div>
 
   <div id="s1" class="tab-content">
   <div class="section-title">📋 시즌1 일자별 모집 현황 (구매인원 누적)</div>
   <div class="data-wrap">
   <table><thead><tr><th>날짜</th><th>이정수</th><th>이정수(VOD)</th><th>이창훈</th><th>권현석</th><th>신민우</th><th>최은정</th><th>홍재영</th><th>이가흠</th><th>합계</th><th>전일대비</th><th>646,992,000원</th></tr></thead><tbody>
-      <tr><td><b>09/09<span>(수)</span></b></td><td>544</td><td>328</td><td>74</td><td>264</td><td>268</td><td>222</td><td>127</td><td>106</td><td><b>1,933</b></td><td><span class="text-down">▼ 16</span></td><td>-6,833,500원</td></tr>
+      <tr><td><b>09/18<span>(금)</span></b></td><td>544</td><td>328</td><td>74</td><td>264</td><td>268</td><td>222</td><td>127</td><td>106</td><td><b>1,933</b></td><td><span class="text-down">▼ 16</span></td><td>-6,833,500원</td></tr>
       <tr><td><b>08/11<span>(화)</span></b></td><td>544</td><td>330</td><td>74</td><td>269</td><td>277</td><td>221</td><td>128</td><td>106</td><td><b>1,949</b></td><td><span class="text-down">▼ 5</span></td><td>-1,098,000원</td></tr>
       <tr><td><b>08/10<span>(월)</span></b></td><td>544</td><td>332</td><td>74</td><td>269</td><td>278</td><td>221</td><td>129</td><td>107</td><td><b>1,954</b></td><td><span class="text-up">▲ 22</span></td><td>8,179,500원</td></tr>
       <tr><td><b>08/09<span style="color:#e03131;">(일)</span></b></td><td>546</td><td>319</td><td>72</td><td>265</td><td>275</td><td>218</td><td>130</td><td>107</td><td><b>1,932</b></td><td>0</td><td>0원</td></tr>
@@ -294,7 +328,131 @@ th.newsubj-col{background:#a5d8ff;color:#1864ab;}
       <tr><td><b>06/16<span>(화)</span></b></td><td>400</td><td>0</td><td>34</td><td>112</td><td>117</td><td>77</td><td>54</td><td>48</td><td><b>842</b></td><td><span class="text-up">▲ 842</span></td><td>266,702,000원</td></tr>
   </tbody></table>
   </div>
-  <p style="font-size:11px;color:#868e96;">※ 모집현황(일자별) 엑셀 원본 데이터입니다. 자동 생성 2026-09-10 02:09</p>
+  <p style="font-size:11px;color:#868e96;">※ 모집현황(일자별) 엑셀 원본 데이터입니다. 자동 생성 2026-09-18 02:27</p>
+  </div>
+
+  <div id="y25" class="tab-content">
+  <div class="section-title">📋 25년 시즌3 일자별 모집 현황</div>
+  <div class="data-wrap"><table><thead><tr><th>날짜</th><th>이정수</th><th>이정수2</th><th>이창훈</th><th>권현석</th><th>신민우</th><th>김대순</th><th>이가흠</th><th>홍재영</th><th>김훈</th><th>우승석</th><th>정석준</th><th>양길봉</th><th>합계</th><th>전일대비</th></tr></thead><tbody>
+      <tr><td><b>9/30</b></td><td>391</td><td>104</td><td>64</td><td>290</td><td>222</td><td>52</td><td>63</td><td>127</td><td>75</td><td>35</td><td>209</td><td>96</td><td><b>1,728</b></td><td><span class="text-up">▲ 2</span></td></tr>
+      <tr><td><b>9/29</b></td><td>389</td><td>103</td><td>64</td><td>292</td><td>221</td><td>52</td><td>63</td><td>127</td><td>75</td><td>36</td><td>208</td><td>96</td><td><b>1,726</b></td><td><span class="text-up">▲ 21</span></td></tr>
+      <tr><td><b>9/26</b></td><td>384</td><td>101</td><td>64</td><td>288</td><td>220</td><td>51</td><td>62</td><td>125</td><td>76</td><td>36</td><td>202</td><td>96</td><td><b>1,705</b></td><td><span class="text-up">▲ 18</span></td></tr>
+      <tr><td><b>9/25</b></td><td>380</td><td>98</td><td>64</td><td>286</td><td>218</td><td>50</td><td>61</td><td>123</td><td>76</td><td>36</td><td>199</td><td>96</td><td><b>1,687</b></td><td><span class="text-up">▲ 17</span></td></tr>
+      <tr><td><b>9/24</b></td><td>382</td><td>96</td><td>62</td><td>281</td><td>218</td><td>50</td><td>58</td><td>123</td><td>75</td><td>35</td><td>194</td><td>96</td><td><b>1,670</b></td><td><span class="text-up">▲ 18</span></td></tr>
+      <tr><td><b>9/23</b></td><td>377</td><td>95</td><td>61</td><td>280</td><td>215</td><td>50</td><td>55</td><td>123</td><td>74</td><td>34</td><td>192</td><td>96</td><td><b>1,652</b></td><td><span class="text-up">▲ 23</span></td></tr>
+      <tr><td><b>9/22</b></td><td>372</td><td>93</td><td>61</td><td>279</td><td>210</td><td>50</td><td>54</td><td>122</td><td>72</td><td>34</td><td>187</td><td>95</td><td><b>1,629</b></td><td><span class="text-up">▲ 121</span></td></tr>
+      <tr><td><b>9/19</b></td><td>356</td><td>79</td><td>54</td><td>265</td><td>194</td><td>46</td><td>45</td><td>106</td><td>70</td><td>34</td><td>168</td><td>91</td><td><b>1,508</b></td><td><span class="text-up">▲ 25</span></td></tr>
+      <tr><td><b>9/18</b></td><td>352</td><td>78</td><td>55</td><td>260</td><td>191</td><td>45</td><td>44</td><td>104</td><td>69</td><td>32</td><td>163</td><td>90</td><td><b>1,483</b></td><td><span class="text-up">▲ 56</span></td></tr>
+      <tr><td><b>9/17</b></td><td>342</td><td>72</td><td>51</td><td>251</td><td>187</td><td>44</td><td>42</td><td>96</td><td>65</td><td>32</td><td>158</td><td>87</td><td><b>1,427</b></td><td><span class="text-up">▲ 36</span></td></tr>
+      <tr><td><b>9/16</b></td><td>331</td><td>72</td><td>48</td><td>244</td><td>187</td><td>42</td><td>44</td><td>93</td><td>63</td><td>29</td><td>155</td><td>83</td><td><b>1,391</b></td><td><span class="text-up">▲ 47</span></td></tr>
+      <tr><td><b>9/15</b></td><td>318</td><td>69</td><td>47</td><td>236</td><td>181</td><td>40</td><td>43</td><td>89</td><td>58</td><td>30</td><td>152</td><td>81</td><td><b>1,344</b></td><td><span class="text-up">▲ 149</span></td></tr>
+      <tr><td><b>9/12</b></td><td>284</td><td>63</td><td>45</td><td>207</td><td>165</td><td>38</td><td>37</td><td>78</td><td>49</td><td>25</td><td>127</td><td>77</td><td><b>1,195</b></td><td><span class="text-up">▲ 39</span></td></tr>
+      <tr><td><b>9/11</b></td><td>276</td><td>60</td><td>41</td><td>200</td><td>161</td><td>37</td><td>36</td><td>77</td><td>48</td><td>22</td><td>124</td><td>74</td><td><b>1,156</b></td><td><span class="text-up">▲ 58</span></td></tr>
+      <tr><td><b>9/10</b></td><td>265</td><td>59</td><td>40</td><td>184</td><td>155</td><td>35</td><td>36</td><td>72</td><td>45</td><td>20</td><td>117</td><td>70</td><td><b>1,098</b></td><td><span class="text-up">▲ 45</span></td></tr>
+      <tr><td><b>9/9</b></td><td>264</td><td>58</td><td>37</td><td>177</td><td>145</td><td>30</td><td>34</td><td>69</td><td>42</td><td>19</td><td>111</td><td>67</td><td><b>1,053</b></td><td><span class="text-up">▲ 63</span></td></tr>
+      <tr><td><b>9/8</b></td><td>249</td><td>54</td><td>36</td><td>169</td><td>137</td><td>29</td><td>32</td><td>64</td><td>37</td><td>17</td><td>102</td><td>64</td><td><b>990</b></td><td><span class="text-up">▲ 192</span></td></tr>
+      <tr><td><b>9/5</b></td><td>205</td><td>35</td><td>30</td><td>147</td><td>107</td><td>22</td><td>19</td><td>44</td><td>29</td><td>16</td><td>88</td><td>56</td><td><b>798</b></td><td><span class="text-up">▲ 117</span></td></tr>
+      <tr><td><b>9/4</b></td><td>168</td><td>30</td><td>26</td><td>129</td><td>92</td><td>19</td><td>14</td><td>33</td><td>25</td><td>15</td><td>81</td><td>49</td><td><b>681</b></td><td><span class="text-up">▲ 491</span></td></tr>
+      <tr><td><b>9/3</b></td><td>16</td><td>6</td><td>13</td><td>46</td><td>35</td><td>5</td><td>4</td><td>13</td><td>8</td><td>5</td><td>23</td><td>16</td><td><b>190</b></td><td><span class="text-up">▲ 40</span></td></tr>
+      <tr><td><b>9/2</b></td><td>37</td><td>6</td><td>11</td><td>33</td><td>22</td><td>4</td><td>2</td><td>5</td><td>5</td><td>3</td><td>15</td><td>7</td><td><b>150</b></td><td>0</td></tr>
+  </tbody></table></div>
+  <div class="section-title">📋 25년 시즌2 일자별 모집 현황</div>
+  <div class="data-wrap"><table><thead><tr><th>날짜</th><th>이정수</th><th>이정수2</th><th>이창훈</th><th>권현석</th><th>신민우</th><th>김대순</th><th>이가흠</th><th>홍재영</th><th>김훈</th><th>우승석</th><th>정석준</th><th>양길봉</th><th>합계</th><th>전일대비</th></tr></thead><tbody>
+      <tr><td><b>9/3</b></td><td>477</td><td>115</td><td>90</td><td>354</td><td>253</td><td>64</td><td>51</td><td>135</td><td>78</td><td>33</td><td>207</td><td>92</td><td><b>1,949</b></td><td><span class="text-down">▼ 3</span></td></tr>
+      <tr><td><b>9/2</b></td><td>476</td><td>117</td><td>90</td><td>355</td><td>253</td><td>64</td><td>51</td><td>136</td><td>78</td><td>34</td><td>206</td><td>92</td><td><b>1,952</b></td><td><span class="text-up">▲ 9</span></td></tr>
+      <tr><td><b>9/1</b></td><td>476</td><td>117</td><td>89</td><td>355</td><td>251</td><td>64</td><td>50</td><td>133</td><td>77</td><td>33</td><td>205</td><td>93</td><td><b>1,943</b></td><td><span class="text-up">▲ 32</span></td></tr>
+      <tr><td><b>8/29</b></td><td>468</td><td>110</td><td>88</td><td>353</td><td>244</td><td>62</td><td>50</td><td>133</td><td>78</td><td>33</td><td>200</td><td>92</td><td><b>1,911</b></td><td><span class="text-up">▲ 2</span></td></tr>
+      <tr><td><b>8/28</b></td><td>469</td><td>109</td><td>87</td><td>352</td><td>245</td><td>62</td><td>49</td><td>132</td><td>78</td><td>33</td><td>200</td><td>93</td><td><b>1,909</b></td><td><span class="text-up">▲ 9</span></td></tr>
+      <tr><td><b>8/27</b></td><td>467</td><td>108</td><td>85</td><td>355</td><td>246</td><td>60</td><td>48</td><td>132</td><td>78</td><td>33</td><td>197</td><td>91</td><td><b>1,900</b></td><td><span class="text-up">▲ 17</span></td></tr>
+      <tr><td><b>8/26</b></td><td>463</td><td>108</td><td>85</td><td>352</td><td>247</td><td>61</td><td>47</td><td>130</td><td>77</td><td>31</td><td>192</td><td>90</td><td><b>1,883</b></td><td><span class="text-up">▲ 22</span></td></tr>
+      <tr><td><b>8/25</b></td><td>458</td><td>106</td><td>85</td><td>349</td><td>245</td><td>59</td><td>45</td><td>129</td><td>77</td><td>29</td><td>189</td><td>90</td><td><b>1,861</b></td><td><span class="text-up">▲ 73</span></td></tr>
+      <tr><td><b>8/22</b></td><td>448</td><td>100</td><td>83</td><td>332</td><td>236</td><td>57</td><td>42</td><td>120</td><td>73</td><td>28</td><td>182</td><td>87</td><td><b>1,788</b></td><td><span class="text-up">▲ 27</span></td></tr>
+      <tr><td><b>8/21</b></td><td>439</td><td>101</td><td>83</td><td>329</td><td>234</td><td>56</td><td>40</td><td>118</td><td>71</td><td>25</td><td>179</td><td>86</td><td><b>1,761</b></td><td><span class="text-up">▲ 32</span></td></tr>
+      <tr><td><b>8/20</b></td><td>438</td><td>100</td><td>81</td><td>322</td><td>228</td><td>54</td><td>40</td><td>117</td><td>69</td><td>24</td><td>174</td><td>82</td><td><b>1,729</b></td><td><span class="text-up">▲ 43</span></td></tr>
+      <tr><td><b>8/19</b></td><td>428</td><td>100</td><td>78</td><td>318</td><td>222</td><td>54</td><td>39</td><td>113</td><td>67</td><td>22</td><td>165</td><td>80</td><td><b>1,686</b></td><td><span class="text-up">▲ 25</span></td></tr>
+      <tr><td><b>8/18</b></td><td>418</td><td>99</td><td>78</td><td>316</td><td>216</td><td>54</td><td>38</td><td>113</td><td>68</td><td>21</td><td>162</td><td>78</td><td><b>1,661</b></td><td><span class="text-up">▲ 28</span></td></tr>
+      <tr><td><b>8/16</b></td><td>416</td><td>99</td><td>74</td><td>313</td><td>215</td><td>51</td><td>38</td><td>107</td><td>65</td><td>21</td><td>159</td><td>75</td><td><b>1,633</b></td><td><span class="text-up">▲ 61</span></td></tr>
+      <tr><td><b>8/14</b></td><td>405</td><td>90</td><td>68</td><td>304</td><td>215</td><td>48</td><td>37</td><td>101</td><td>61</td><td>20</td><td>151</td><td>72</td><td><b>1,572</b></td><td><span class="text-up">▲ 21</span></td></tr>
+      <tr><td><b>8/13</b></td><td>402</td><td>90</td><td>66</td><td>304</td><td>211</td><td>47</td><td>36</td><td>98</td><td>60</td><td>19</td><td>147</td><td>71</td><td><b>1,551</b></td><td><span class="text-up">▲ 13</span></td></tr>
+      <tr><td><b>8/12</b></td><td>402</td><td>90</td><td>63</td><td>301</td><td>206</td><td>46</td><td>36</td><td>98</td><td>60</td><td>19</td><td>147</td><td>70</td><td><b>1,538</b></td><td><span class="text-up">▲ 40</span></td></tr>
+      <tr><td><b>8/11</b></td><td>396</td><td>87</td><td>61</td><td>292</td><td>205</td><td>43</td><td>34</td><td>96</td><td>55</td><td>18</td><td>144</td><td>67</td><td><b>1,498</b></td><td><span class="text-up">▲ 62</span></td></tr>
+      <tr><td><b>8/10</b></td><td>391</td><td>84</td><td>60</td><td>281</td><td>195</td><td>39</td><td>31</td><td>89</td><td>49</td><td>17</td><td>138</td><td>62</td><td><b>1,436</b></td><td><span class="text-up">▲ 104</span></td></tr>
+      <tr><td><b>8/8</b></td><td>369</td><td>76</td><td>53</td><td>261</td><td>178</td><td>35</td><td>31</td><td>86</td><td>45</td><td>17</td><td>129</td><td>52</td><td><b>1,332</b></td><td><span class="text-up">▲ 124</span></td></tr>
+      <tr><td><b>8/7</b></td><td>339</td><td>73</td><td>51</td><td>236</td><td>161</td><td>32</td><td>28</td><td>68</td><td>40</td><td>15</td><td>120</td><td>45</td><td><b>1,208</b></td><td><span class="text-up">▲ 51</span></td></tr>
+      <tr><td><b>8/7</b></td><td>321</td><td>70</td><td>50</td><td>225</td><td>159</td><td>31</td><td>28</td><td>66</td><td>35</td><td>14</td><td>116</td><td>42</td><td><b>1,157</b></td><td><span class="text-up">▲ 583</span></td></tr>
+      <tr><td><b>8/6</b></td><td>166</td><td>31</td><td>24</td><td>117</td><td>75</td><td>15</td><td>12</td><td>28</td><td>19</td><td>5</td><td>57</td><td>25</td><td><b>574</b></td><td><span class="text-up">▲ 205</span></td></tr>
+      <tr><td><b>8/5</b></td><td>108</td><td>24</td><td>13</td><td>85</td><td>41</td><td>14</td><td>8</td><td>14</td><td>12</td><td>6</td><td>33</td><td>11</td><td><b>369</b></td><td>0</td></tr>
+  </tbody></table></div>
+  <div class="section-title">📋 25년 시즌1 일자별 모집 현황</div>
+  <div class="data-wrap"><table><thead><tr><th>날짜</th><th>이정수</th><th>이정수2</th><th>이창훈</th><th>권현석</th><th>신민우</th><th>김대순</th><th>이가흠</th><th>홍재영</th><th>김훈</th><th>우승석</th><th>정석준</th><th>양길봉</th><th>합계</th><th>전일대비</th></tr></thead><tbody>
+      <tr><td><b>8/7</b></td><td>516</td><td>133</td><td>132</td><td>351</td><td>334</td><td>71</td><td>61</td><td>151</td><td>77</td><td>34</td><td>217</td><td>105</td><td><b>2,182</b></td><td><span class="text-up">▲ 9</span></td></tr>
+      <tr><td><b>8/6</b></td><td>517</td><td>133</td><td>130</td><td>351</td><td>330</td><td>70</td><td>60</td><td>149</td><td>77</td><td>34</td><td>218</td><td>104</td><td><b>2,173</b></td><td><span class="text-up">▲ 4</span></td></tr>
+      <tr><td><b>8/5</b></td><td>520</td><td>133</td><td>129</td><td>349</td><td>327</td><td>72</td><td>60</td><td>148</td><td>76</td><td>34</td><td>217</td><td>104</td><td><b>2,169</b></td><td><span class="text-up">▲ 34</span></td></tr>
+      <tr><td><b>8/4</b></td><td>513</td><td>122</td><td>127</td><td>340</td><td>327</td><td>71</td><td>60</td><td>147</td><td>76</td><td>34</td><td>215</td><td>103</td><td><b>2,135</b></td><td><span class="text-up">▲ 5</span></td></tr>
+      <tr><td><b>8/1</b></td><td>514</td><td>121</td><td>127</td><td>344</td><td>324</td><td>71</td><td>61</td><td>145</td><td>77</td><td>32</td><td>211</td><td>103</td><td><b>2,130</b></td><td><span class="text-up">▲ 2</span></td></tr>
+      <tr><td><b>7/31</b></td><td>513</td><td>120</td><td>128</td><td>343</td><td>324</td><td>72</td><td>60</td><td>144</td><td>78</td><td>32</td><td>211</td><td>103</td><td><b>2,128</b></td><td><span class="text-up">▲ 7</span></td></tr>
+      <tr><td><b>7/30</b></td><td>519</td><td>120</td><td>128</td><td>342</td><td>315</td><td>71</td><td>59</td><td>143</td><td>78</td><td>32</td><td>211</td><td>103</td><td><b>2,121</b></td><td><span class="text-up">▲ 15</span></td></tr>
+      <tr><td><b>7/29</b></td><td>518</td><td>120</td><td>127</td><td>335</td><td>313</td><td>70</td><td>60</td><td>144</td><td>76</td><td>32</td><td>207</td><td>104</td><td><b>2,106</b></td><td><span class="text-up">▲ 17</span></td></tr>
+      <tr><td><b>7/28</b></td><td>517</td><td>116</td><td>123</td><td>335</td><td>308</td><td>72</td><td>61</td><td>144</td><td>75</td><td>32</td><td>204</td><td>102</td><td><b>2,089</b></td><td><span class="text-up">▲ 11</span></td></tr>
+      <tr><td><b>7/26</b></td><td>521</td><td>118</td><td>123</td><td>337</td><td>299</td><td>73</td><td>61</td><td>145</td><td>75</td><td>32</td><td>195</td><td>99</td><td><b>2,078</b></td><td><span class="text-up">▲ 15</span></td></tr>
+      <tr><td><b>7/25</b></td><td>521</td><td>118</td><td>120</td><td>338</td><td>296</td><td>72</td><td>60</td><td>144</td><td>74</td><td>30</td><td>193</td><td>97</td><td><b>2,063</b></td><td><span class="text-up">▲ 19</span></td></tr>
+      <tr><td><b>7/24</b></td><td>521</td><td>117</td><td>119</td><td>333</td><td>295</td><td>71</td><td>59</td><td>144</td><td>74</td><td>28</td><td>187</td><td>96</td><td><b>2,044</b></td><td><span class="text-up">▲ 26</span></td></tr>
+      <tr><td><b>7/23</b></td><td>517</td><td>112</td><td>114</td><td>329</td><td>292</td><td>71</td><td>58</td><td>144</td><td>72</td><td>28</td><td>184</td><td>97</td><td><b>2,018</b></td><td><span class="text-up">▲ 10</span></td></tr>
+      <tr><td><b>7/22</b></td><td>515</td><td>110</td><td>115</td><td>327</td><td>290</td><td>71</td><td>60</td><td>145</td><td>69</td><td>28</td><td>181</td><td>97</td><td><b>2,008</b></td><td><span class="text-up">▲ 19</span></td></tr>
+      <tr><td><b>7/21</b></td><td>517</td><td>108</td><td>116</td><td>327</td><td>281</td><td>70</td><td>59</td><td>144</td><td>66</td><td>27</td><td>179</td><td>95</td><td><b>1,989</b></td><td><span class="text-up">▲ 22</span></td></tr>
+      <tr><td><b>7/19</b></td><td>515</td><td>109</td><td>115</td><td>330</td><td>267</td><td>69</td><td>58</td><td>146</td><td>62</td><td>27</td><td>175</td><td>94</td><td><b>1,967</b></td><td><span class="text-up">▲ 14</span></td></tr>
+      <tr><td><b>7/18</b></td><td>515</td><td>106</td><td>114</td><td>332</td><td>266</td><td>65</td><td>57</td><td>144</td><td>60</td><td>27</td><td>173</td><td>94</td><td><b>1,953</b></td><td><span class="text-down">▼ 3</span></td></tr>
+      <tr><td><b>7/17</b></td><td>512</td><td>107</td><td>110</td><td>337</td><td>267</td><td>65</td><td>57</td><td>150</td><td>60</td><td>27</td><td>170</td><td>94</td><td><b>1,956</b></td><td><span class="text-up">▲ 23</span></td></tr>
+      <tr><td><b>7/16</b></td><td>508</td><td>107</td><td>109</td><td>332</td><td>268</td><td>64</td><td>56</td><td>145</td><td>58</td><td>26</td><td>169</td><td>91</td><td><b>1,933</b></td><td><span class="text-up">▲ 18</span></td></tr>
+      <tr><td><b>7/15</b></td><td>504</td><td>105</td><td>107</td><td>327</td><td>264</td><td>65</td><td>57</td><td>142</td><td>58</td><td>26</td><td>168</td><td>92</td><td><b>1,915</b></td><td><span class="text-up">▲ 18</span></td></tr>
+      <tr><td><b>7/14</b></td><td>507</td><td>99</td><td>103</td><td>327</td><td>259</td><td>64</td><td>55</td><td>138</td><td>60</td><td>26</td><td>168</td><td>91</td><td><b>1,897</b></td><td><span class="text-up">▲ 14</span></td></tr>
+      <tr><td><b>7/11</b></td><td>513</td><td>100</td><td>101</td><td>326</td><td>253</td><td>62</td><td>53</td><td>137</td><td>60</td><td>27</td><td>164</td><td>87</td><td><b>1,883</b></td><td><span class="text-up">▲ 13</span></td></tr>
+      <tr><td><b>7/10</b></td><td>508</td><td>102</td><td>97</td><td>324</td><td>255</td><td>60</td><td>52</td><td>135</td><td>60</td><td>27</td><td>162</td><td>88</td><td><b>1,870</b></td><td><span class="text-up">▲ 17</span></td></tr>
+      <tr><td><b>7/9</b></td><td>507</td><td>101</td><td>95</td><td>320</td><td>253</td><td>60</td><td>53</td><td>133</td><td>60</td><td>27</td><td>156</td><td>88</td><td><b>1,853</b></td><td><span class="text-up">▲ 2</span></td></tr>
+      <tr><td><b>7/8</b></td><td>502</td><td>102</td><td>92</td><td>321</td><td>252</td><td>60</td><td>54</td><td>135</td><td>61</td><td>28</td><td>157</td><td>87</td><td><b>1,851</b></td><td><span class="text-up">▲ 5</span></td></tr>
+      <tr><td><b>7/7</b></td><td>495</td><td>104</td><td>91</td><td>328</td><td>250</td><td>59</td><td>56</td><td>130</td><td>60</td><td>28</td><td>157</td><td>88</td><td><b>1,846</b></td><td><span class="text-up">▲ 77</span></td></tr>
+      <tr><td><b>7/4</b></td><td>490</td><td>98</td><td>85</td><td>296</td><td>252</td><td>56</td><td>56</td><td>119</td><td>59</td><td>27</td><td>147</td><td>84</td><td><b>1,769</b></td><td><span class="text-up">▲ 26</span></td></tr>
+      <tr><td><b>7/3</b></td><td>482</td><td>97</td><td>83</td><td>299</td><td>244</td><td>56</td><td>55</td><td>121</td><td>56</td><td>26</td><td>142</td><td>82</td><td><b>1,743</b></td><td><span class="text-up">▲ 23</span></td></tr>
+      <tr><td><b>7/2</b></td><td>482</td><td>88</td><td>81</td><td>300</td><td>239</td><td>56</td><td>52</td><td>116</td><td>56</td><td>26</td><td>142</td><td>82</td><td><b>1,720</b></td><td><span class="text-up">▲ 22</span></td></tr>
+      <tr><td><b>7/1</b></td><td>482</td><td>91</td><td>73</td><td>304</td><td>233</td><td>55</td><td>51</td><td>113</td><td>55</td><td>25</td><td>134</td><td>82</td><td><b>1,698</b></td><td><span class="text-up">▲ 20</span></td></tr>
+      <tr><td><b>6/30</b></td><td>475</td><td>97</td><td>70</td><td>300</td><td>230</td><td>55</td><td>51</td><td>112</td><td>54</td><td>23</td><td>130</td><td>81</td><td><b>1,678</b></td><td><span class="text-up">▲ 31</span></td></tr>
+      <tr><td><b>6/27</b></td><td>493</td><td>72</td><td>71</td><td>300</td><td>224</td><td>52</td><td>53</td><td>116</td><td>55</td><td>22</td><td>108</td><td>81</td><td><b>1,647</b></td><td><span class="text-up">▲ 37</span></td></tr>
+      <tr><td><b>6/26</b></td><td>498</td><td>55</td><td>75</td><td>301</td><td>209</td><td>53</td><td>50</td><td>110</td><td>53</td><td>22</td><td>105</td><td>79</td><td><b>1,610</b></td><td>0</td></tr>
+      <tr><td><b>6/25</b></td><td>499</td><td>55</td><td>75</td><td>301</td><td>210</td><td>53</td><td>50</td><td>109</td><td>53</td><td>22</td><td>104</td><td>79</td><td><b>1,610</b></td><td><span class="text-up">▲ 69</span></td></tr>
+      <tr><td><b>6/24</b></td><td>501</td><td>29</td><td>77</td><td>305</td><td>196</td><td>50</td><td>45</td><td>98</td><td>51</td><td>22</td><td>90</td><td>77</td><td><b>1,541</b></td><td><span class="text-up">▲ 61</span></td></tr>
+      <tr><td><b>6/23</b></td><td>503</td><td>0</td><td>72</td><td>286</td><td>192</td><td>46</td><td>45</td><td>100</td><td>50</td><td>22</td><td>86</td><td>78</td><td><b>1,480</b></td><td><span class="text-up">▲ 224</span></td></tr>
+      <tr><td><b>6/20</b></td><td>424</td><td>0</td><td>64</td><td>221</td><td>169</td><td>42</td><td>40</td><td>87</td><td>44</td><td>20</td><td>76</td><td>69</td><td><b>1,256</b></td><td><span class="text-up">▲ 117</span></td></tr>
+      <tr><td><b>6/19</b></td><td>386</td><td>0</td><td>57</td><td>202</td><td>156</td><td>38</td><td>35</td><td>78</td><td>39</td><td>17</td><td>69</td><td>62</td><td><b>1,139</b></td><td>0</td></tr>
+  </tbody></table></div>
+  <div class="section-title">📋 25년 시즌4 일자별 모집 현황</div>
+  <div class="data-wrap"><table><thead><tr><th>날짜</th><th>이정수</th><th>이정수2</th><th>이창훈</th><th>권현석</th><th>신민우</th><th>김대순</th><th>이가흠</th><th>홍재영</th><th>김훈</th><th>우승석</th><th>정석준</th><th>양길봉</th><th>합계</th><th>전일대비</th></tr></thead><tbody>
+      <tr><td><b>11/03</b></td><td>374</td><td>80</td><td>50</td><td>198</td><td>168</td><td>48</td><td>52</td><td>106</td><td>68</td><td>34</td><td>167</td><td>85</td><td><b>1,430</b></td><td><span class="text-down">▼ 6</span></td></tr>
+      <tr><td><b>10/30</b></td><td>375</td><td>80</td><td>50</td><td>199</td><td>169</td><td>48</td><td>52</td><td>107</td><td>68</td><td>34</td><td>169</td><td>85</td><td><b>1,436</b></td><td>0</td></tr>
+      <tr><td><b>10/29</b></td><td>375</td><td>79</td><td>50</td><td>199</td><td>170</td><td>48</td><td>52</td><td>107</td><td>68</td><td>34</td><td>169</td><td>85</td><td><b>1,436</b></td><td>0</td></tr>
+      <tr><td><b>10/28</b></td><td>375</td><td>79</td><td>50</td><td>199</td><td>172</td><td>48</td><td>52</td><td>106</td><td>68</td><td>34</td><td>168</td><td>85</td><td><b>1,436</b></td><td><span class="text-up">▲ 5</span></td></tr>
+      <tr><td><b>10/27</b></td><td>374</td><td>79</td><td>50</td><td>199</td><td>172</td><td>47</td><td>51</td><td>106</td><td>68</td><td>33</td><td>169</td><td>83</td><td><b>1,431</b></td><td><span class="text-up">▲ 16</span></td></tr>
+      <tr><td><b>10/24</b></td><td>374</td><td>75</td><td>49</td><td>197</td><td>170</td><td>45</td><td>51</td><td>103</td><td>68</td><td>33</td><td>168</td><td>82</td><td><b>1,415</b></td><td><span class="text-up">▲ 14</span></td></tr>
+      <tr><td><b>10/23</b></td><td>374</td><td>71</td><td>47</td><td>199</td><td>168</td><td>45</td><td>51</td><td>102</td><td>66</td><td>31</td><td>165</td><td>82</td><td><b>1,401</b></td><td><span class="text-up">▲ 12</span></td></tr>
+      <tr><td><b>10/22</b></td><td>375</td><td>63</td><td>48</td><td>198</td><td>167</td><td>45</td><td>51</td><td>101</td><td>66</td><td>31</td><td>162</td><td>82</td><td><b>1,389</b></td><td><span class="text-up">▲ 25</span></td></tr>
+      <tr><td><b>10/21</b></td><td>375</td><td>61</td><td>48</td><td>197</td><td>161</td><td>44</td><td>49</td><td>100</td><td>63</td><td>31</td><td>153</td><td>82</td><td><b>1,364</b></td><td><span class="text-up">▲ 19</span></td></tr>
+      <tr><td><b>10/20</b></td><td>372</td><td>59</td><td>48</td><td>194</td><td>160</td><td>43</td><td>49</td><td>98</td><td>62</td><td>31</td><td>147</td><td>82</td><td><b>1,345</b></td><td><span class="text-up">▲ 79</span></td></tr>
+      <tr><td><b>10/17</b></td><td>352</td><td>54</td><td>45</td><td>185</td><td>150</td><td>41</td><td>43</td><td>89</td><td>61</td><td>30</td><td>135</td><td>81</td><td><b>1,266</b></td><td><span class="text-up">▲ 36</span></td></tr>
+      <tr><td><b>10/16</b></td><td>339</td><td>52</td><td>45</td><td>179</td><td>150</td><td>40</td><td>42</td><td>87</td><td>60</td><td>30</td><td>130</td><td>76</td><td><b>1,230</b></td><td><span class="text-up">▲ 42</span></td></tr>
+      <tr><td><b>10/15</b></td><td>328</td><td>49</td><td>43</td><td>175</td><td>144</td><td>39</td><td>42</td><td>86</td><td>57</td><td>30</td><td>121</td><td>74</td><td><b>1,188</b></td><td><span class="text-up">▲ 39</span></td></tr>
+      <tr><td><b>10/14</b></td><td>318</td><td>48</td><td>40</td><td>166</td><td>141</td><td>37</td><td>41</td><td>83</td><td>55</td><td>30</td><td>116</td><td>74</td><td><b>1,149</b></td><td><span class="text-up">▲ 30</span></td></tr>
+      <tr><td><b>10/13</b></td><td>310</td><td>46</td><td>40</td><td>162</td><td>140</td><td>32</td><td>37</td><td>82</td><td>52</td><td>29</td><td>116</td><td>73</td><td><b>1,119</b></td><td><span class="text-up">▲ 23</span></td></tr>
+      <tr><td><b>10/12</b></td><td>298</td><td>47</td><td>40</td><td>159</td><td>137</td><td>31</td><td>36</td><td>82</td><td>51</td><td>29</td><td>115</td><td>71</td><td><b>1,096</b></td><td><span class="text-up">▲ 155</span></td></tr>
+      <tr><td><b>10/9</b></td><td>262</td><td>40</td><td>36</td><td>140</td><td>121</td><td>24</td><td>32</td><td>64</td><td>40</td><td>23</td><td>96</td><td>63</td><td><b>941</b></td><td><span class="text-up">▲ 43</span></td></tr>
+      <tr><td><b>10/8</b></td><td>250</td><td>37</td><td>35</td><td>136</td><td>113</td><td>24</td><td>31</td><td>61</td><td>37</td><td>21</td><td>94</td><td>59</td><td><b>898</b></td><td><span class="text-up">▲ 11</span></td></tr>
+      <tr><td><b>10/7</b></td><td>245</td><td>37</td><td>35</td><td>135</td><td>110</td><td>24</td><td>30</td><td>62</td><td>35</td><td>21</td><td>94</td><td>59</td><td><b>887</b></td><td><span class="text-up">▲ 47</span></td></tr>
+      <tr><td><b>10/6</b></td><td>235</td><td>36</td><td>32</td><td>128</td><td>105</td><td>23</td><td>29</td><td>55</td><td>32</td><td>20</td><td>88</td><td>57</td><td><b>840</b></td><td><span class="text-up">▲ 58</span></td></tr>
+      <tr><td><b>10/4</b></td><td>215</td><td>36</td><td>28</td><td>122</td><td>96</td><td>22</td><td>25</td><td>49</td><td>31</td><td>20</td><td>83</td><td>55</td><td><b>782</b></td><td><span class="text-up">▲ 49</span></td></tr>
+      <tr><td><b>10/3</b></td><td>206</td><td>36</td><td>26</td><td>115</td><td>92</td><td>19</td><td>24</td><td>45</td><td>28</td><td>15</td><td>76</td><td>51</td><td><b>733</b></td><td><span class="text-up">▲ 112</span></td></tr>
+      <tr><td><b>10/2</b></td><td>173</td><td>31</td><td>23</td><td>107</td><td>73</td><td>16</td><td>18</td><td>36</td><td>24</td><td>14</td><td>62</td><td>44</td><td><b>621</b></td><td><span class="text-up">▲ 396</span></td></tr>
+      <tr><td><b>10/1</b></td><td>68</td><td>11</td><td>9</td><td>36</td><td>25</td><td>6</td><td>6</td><td>13</td><td>11</td><td>6</td><td>16</td><td>18</td><td><b>225</b></td><td><span class="text-up">▲ 123</span></td></tr>
+      <tr><td><b>9/30</b></td><td>33</td><td>8</td><td>2</td><td>17</td><td>10</td><td>4</td><td>3</td><td>7</td><td>2</td><td>3</td><td>6</td><td>7</td><td><b>102</b></td><td>0</td></tr>
+  </tbody></table></div>
+  <p style="font-size:11px;color:#868e96;">※ 25년도 모집인원(일자별) 엑셀 원본 데이터입니다. 강사 구성은 25년 당시 기준이라 26년(8과목)과 다를 수 있습니다. 자동 생성 2026-09-18 02:27</p>
   </div>
 </div>
 <script>
